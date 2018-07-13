@@ -1,0 +1,3 @@
+使用private,public对变量进行封装
+private针对的是类
+如果未加上private,public则为friendly,即位于同一个包内可访问

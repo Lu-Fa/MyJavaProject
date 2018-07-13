@@ -1,0 +1,1 @@
+以.java后缀的源代码通过编译器生成.class的字节码，然后通过JVM即java虚拟机运行字节码，java程序并不是一个可执行文件，而是由许多class类文件组成，每个class文件对应一个java类，而且这些类文件并非全部装入内存，而是根据需要逐渐载入。ClassLoader类装载器包括bootstrap classloader(启动类加载器）。

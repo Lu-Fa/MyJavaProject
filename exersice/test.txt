@@ -1,0 +1,22 @@
+import java.util.*;
+public class Test {
+
+	public static void main(String[] args) {
+		/**output data*/
+		System.out.print(new Date());
+		char han='ÌÌ';
+		System.out.format("\n%x", (short)han);
+		char h=0x70eb;
+		System.out.println(h);
+		System.out.println(Math.E);
+		System.out.println((int)(Math.E));
+		//Math.randomµÄ·¶Î§[0,1)
+		double c;
+		while((c=Math.random())!=0.0)
+			{
+			System.out.println(c);
+			};
+		System.out.println("°üº¬0");
+	}
+
+}

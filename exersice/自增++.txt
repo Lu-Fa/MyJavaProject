@@ -1,0 +1,19 @@
+//y=x++是先把x的值赋值给y,再令x加1
+//y=++x是先令x加1，再把x的值赋值给y
+public class Test {
+    static {
+    	int x=5;
+    }//第一次被载入JVM时运行，由于是局部变量，x=5不影响后面的值
+    static int x,y;//初始化时x=0,y=0
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        x--;//x=-1 
+        myMethod();//y=0,x=1;
+        System.out.println(x+y++ +x);//1+0+1=2
+	}
+	public static void myMethod()
+	{
+		y=x++ + ++x;//-1+1=0
+	}
+
+}

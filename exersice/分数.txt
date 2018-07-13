@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		Fraction a = new Fraction(in.nextInt(), in.nextInt());
+		Fraction b = new Fraction(in.nextInt(),in.nextInt());
+		a.print();
+		b.print();
+		a.plus(b).print();
+		a.multiply(b).plus(new Fraction(5,6)).print();
+		a.print();
+		b.print();
+		in.close();
+	}
+
+}
+class Fraction{
+	private int a=0,b=0;
+	public Fraction(int a, int b){
+		this.a=a;
+		this.b=b;
+	}
+	double toDouble() {
+		
+		return (double)a/b;
+	}//将分数转换为double
+	
+Fraction plus(Fraction r) {
+	Fraction q=new Fraction(0,0);
+	q.a=this.a*r.b+r.a*this.b;
+	q.b=this.b*r.b;
+	return q;
+} //将自己的分数和r的分数相加，产生一个新的Fraction的对象。注意小学四年级学过两个分数如何相加的哈。
+Fraction multiply(Fraction r)
+{
+	Fraction m=new Fraction(0,0);
+	m.a=this.a*r.a;
+	m.b=this.b*r.b;
+	return m;
+	}  //将自己的分数和r的分数相乘，产生一个新的Fraction的对象。
+void print() {
+	if(this.a==this.b) {
+		System.out.println(1);
+	}
+	else {
+		int rem=1,x,y;
+		x=this.a;
+		y=this.b;
+		while (y>0)
+		{
+			rem = x % y;
+			x = y;
+			y = rem;
+		}
+		System.out.printf("%d/%d\n", this.a/x,this.b/x);
+	}
+}
+}
